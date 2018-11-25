@@ -17,6 +17,8 @@ public class NumberMirror2 {
             reversed = reversed * 10 + lastDigit;
             number /= 10;
         }
+
+
         System.out.println("Reversed Number: " + reversed);
 
     }
