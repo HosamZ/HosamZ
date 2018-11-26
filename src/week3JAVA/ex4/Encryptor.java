@@ -9,6 +9,8 @@ import java.util.Random;
 //output : Hosa$4%m
 public class Encryptor {
 
+    // Comment
+
     public String encrypt(String messege){
         Random random = new Random();
         messege.replaceAll("A","4");
