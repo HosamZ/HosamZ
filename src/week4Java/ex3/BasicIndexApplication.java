@@ -1,3 +1,5 @@
+package week4Java.ex3;
+
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
