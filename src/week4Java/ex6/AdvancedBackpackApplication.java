@@ -28,7 +28,6 @@ public class AdvancedBackpackApplication {
         }
         backpack.add(item1);
         System.out.println("Backpack: "+backpack);
-
         backpack.add(item1);
         System.out.println("Backpack: "+backpack);
         System.out.println("Backpack size: "+backpack.size());
