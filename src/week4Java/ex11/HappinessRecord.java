@@ -13,6 +13,12 @@ public class HappinessRecord {
         this.score = score;
     }
 
+    @Override
+    public String toString() {
+        return
+                "rank=" + rank + ", country='" + country + '\'' + ", score=" + score;
+    }
+
     public Integer getRank() {
         return rank;
     }
@@ -21,16 +27,7 @@ public class HappinessRecord {
         return country;
     }
 
-    @Override
-    public String toString() {
-        return
-                "rank=" + rank +
-                ", country='" + country + '\'' +
-                ", score=" + score ;
-    }
-
     public Double getScore() {
         return score;
     }
-
 }

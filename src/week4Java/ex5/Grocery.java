@@ -10,8 +10,7 @@ public class Grocery {
     }
     @Override
     public String toString() {
-        return "" +
-                "name=" + name ;
+        return "" + "name=" + name ;
     }
     @Override
     public boolean equals(Object o) {
