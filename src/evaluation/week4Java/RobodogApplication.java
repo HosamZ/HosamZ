@@ -9,15 +9,11 @@ public class RobodogApplication {
 
     public static void main(String[] args) {
         FileReader reader = new FileReader();
-        readFile(reader);
-        Set<Letter> letters =  new HashSet<>();
-        List<String> specialWords = new ArrayList<>();
-        boolean containsMove = letters.contains("move");
-        if(containsMove){
+        List<String> letter = reader.asLines("evaluation/week4Java/robodog.txt");
+        Set<Letter> lettersSet =  new HashSet<>();
 
 
-            System.out.println(containsMove);
-        }
+
     }
 
     private static void readFile(FileReader reader) {

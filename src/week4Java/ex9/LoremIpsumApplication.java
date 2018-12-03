@@ -2,7 +2,7 @@ package week4Java.ex9;
 
 import java.util.List;
 
-public class LoremIpsumApplication {
+public class   LoremIpsumApplication {
     public static void main(String[] args) {
         FileReader reader = new FileReader();
         readFile(reader);

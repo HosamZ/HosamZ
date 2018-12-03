@@ -1,15 +1,10 @@
 package week4Java.ex12;
-
 import week4Java.ex9.FileReader;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
 public class CharacterReader {
     private FileReader reader = new FileReader();
-
-
     public List<Character> getCharacters(String filePath){
         List<Character> characters = new ArrayList<>();
         List<String> lines=reader.asLines(filePath);
@@ -25,6 +20,4 @@ public class CharacterReader {
         }
         return characters;
     }
-
-
-    }
+}

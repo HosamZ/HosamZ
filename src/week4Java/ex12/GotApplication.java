@@ -5,25 +5,21 @@ import java.util.List;
 
 public class GotApplication {
     public static void main(String[] args) {
-        characterAppereance();
+        showNumberOfCharacters();
         System.out.println("Number of dead characters: "+characterDeath());
-        menDeaths();
+        showNumberOfMenDeaths();
+        //make more clasess to store your methods every class has one responsibility
         deadWomenPercentage();
-        Integer deadmen = menDeaths();
+        Integer deadmen = showNumberOfMenDeaths();
         System.out.println("Dead men: "+deadmen+" | "+"Dead men: "+deadMenPercentage()+"%");
         Integer deadwomen = womenDeaths();
         System.out.println("Dead women: "+deadwomen+" | "+"Dead women: "+deadWomenPercentage()+"%");
-
     }
-
-
-
     private static Integer deadMenPercentage(){
-        Integer totalMenDeaths = menDeaths();
+        Integer totalMenDeaths = showNumberOfMenDeaths();
         Integer percentage1 = totalMenDeaths*100/characterDeath();
         return percentage1;
     }
-
     private static Integer deadWomenPercentage() {
         Integer totalWomenDeaths = womenDeaths();
         Integer percentage = totalWomenDeaths*100/characterDeath();
@@ -41,8 +37,6 @@ public class GotApplication {
         Integer totalWomenNumber = womenTotalNumber.size();
         return totalWomenNumber;
     }
-
-
     private static Integer womenDeaths() {
         CharacterReader reader = new CharacterReader();
         List<Character> lines = reader.getCharacters("week4Java/ex12/got-characters.csv");
@@ -55,26 +49,20 @@ public class GotApplication {
         }
         Integer womenDeath = womanDeaths.size();
         return womenDeath;
-
     }
-
-
-    private static Integer menDeaths() {
+    private static Integer showNumberOfMenDeaths() {
         CharacterReader reader = new CharacterReader();
-        List<Character> lines = reader.getCharacters("week4Java/ex12/got-characters.csv");
+        List<Character> characters = reader.getCharacters("week4Java/ex12/got-characters.csv");
         List<Character> menDeaths = new ArrayList<>();
 
-        for (Character line : lines) {
-            if(!line.getBookOfDeath().isEmpty()&& line.getGender().contains("1")){
-                menDeaths.add(line);
+        for (Character character : characters) {
+            if(!character.getBookOfDeath().isEmpty()&& character.getGender().contains("1")){
+                menDeaths.add(character);
             }
         }
-        Integer menDeath = menDeaths.size();
-        return menDeath;
-
-
+        Integer numberOfMenWhoDied = menDeaths.size();
+        return numberOfMenWhoDied;
     }
-
     private static Integer characterDeath() {
         CharacterReader reader = new CharacterReader();
         List<Character> lines = reader.getCharacters("week4Java/ex12/got-characters.csv");
@@ -85,15 +73,12 @@ public class GotApplication {
             }
         }
         return deaths.size();
-
     }
-    private static void characterAppereance() {
+    private static void showNumberOfCharacters() {
         CharacterReader reader = new CharacterReader();
         List<Character> lines = reader.getCharacters("week4Java/ex12/got-characters.csv");
         //How many characters appear in the books in total?
         System.out.println("Number of characters: "+lines.size());
-
     }
-
 }
 

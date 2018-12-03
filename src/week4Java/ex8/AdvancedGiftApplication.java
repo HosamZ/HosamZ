@@ -1,7 +1,5 @@
 package week4Java.ex8;
-
 import java.util.Optional;
-
 public class AdvancedGiftApplication {
     public static void main(String[] args) {
         Optional<Box> giftBox = Optional.empty();

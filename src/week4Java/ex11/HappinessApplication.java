@@ -1,12 +1,8 @@
 package week4Java.ex11;
-
 import week4Java.ex9.FileReader;
-
 import java.util.*;
-
 public class HappinessApplication {
     public static void main(String[] args) {
-
         FileReader reader = new FileReader();
         List<String> lines = reader.asLines("week4Java/ex11/world-happiness-2017.csv");
         lines.remove(0);
@@ -16,7 +12,6 @@ public class HappinessApplication {
             System.out.println(happinessRecords.get(times));
         }
     }
-
     public static List<HappinessRecord> toHappienssRecord(List<String> lines) {
         List<HappinessRecord> happinessRecords = new ArrayList<>();
         for (String line : lines) {
