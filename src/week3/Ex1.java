@@ -8,9 +8,9 @@ public class Ex1 {
     public static void main(String[] args) {
 
         if (isAtHome() && !isUsingOldPhone()) {
-            System.out.println("Call with old Telephone.");
+            System.out.println("call with old Telephone.");
         } else {
-            System.out.println("Call with CellPhone.");
+            System.out.println("call with CellPhone.");
         }
     }
 
