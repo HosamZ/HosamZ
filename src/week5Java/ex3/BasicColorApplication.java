@@ -8,12 +8,12 @@ import java.util.List;
 public class BasicColorApplication {
     public static void main(String[] args) {
         Rectangle rectangle = new Rectangle();
-        System.out.println("color: "+rectangle.getColor());
-        System.out.println("Name: "+rectangle.getName());
+        System.out.println("color: " + rectangle.getColor());
+        System.out.println("Name: " + rectangle.getName());
         Colored colored = (Colored) rectangle;
-        System.out.println("Colored: "+colored.getColor());
+        System.out.println("Colored: " + colored.getColor());
         Shape shape = (Shape) rectangle;
-        System.out.println("Shape: "+shape.getName());
+        System.out.println("Shape: " + shape.getName());
         List<Rectangle> rectangles = new ArrayList<>();
         rectangles.add(rectangle);
         System.out.println(rectangles);
