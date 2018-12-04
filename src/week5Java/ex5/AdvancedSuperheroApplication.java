@@ -1,5 +1,4 @@
 package week5Java.ex5;
-
 import week5Java.ex4.Superhero;
 import week5Java.ex4.SuperheroCaller;
 
@@ -9,7 +8,8 @@ public class AdvancedSuperheroApplication {
         SuperheroCaller caller = new SuperheroCaller();
         for (int times = 0; times < 10; times++) {
             Superhero superhero = caller.call();
-            joker.weaken(superhero.getName());
+            superhero.fight(joker);
+//            joker.weaken(superhero.getName());
         }
     }
 }
