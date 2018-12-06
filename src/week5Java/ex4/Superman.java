@@ -7,12 +7,10 @@ public class Superman implements Superhero {
     public String getName() {
         return "Superman";
     }
-
     @Override
     public void fight(Villain villain) {
         villain.weaken(getName());
     }
-
     @Override
     public String toString() {
         return "Superman";

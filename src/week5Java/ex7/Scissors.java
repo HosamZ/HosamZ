@@ -2,13 +2,15 @@ package week5Java.ex7;
 
 public class Scissors implements Move {
     @Override
-    public String moveName() {
+    public String getName() {
         return "scissors";
     }
 
     @Override
-    public Boolean defeatMove() {
-        //teach moves how to defeat each others 
-        return null;
+    public Boolean defeatMove(Move move) {
+        if (move.getName().equals("paper")){
+            return true;
+        }
+        return false;
     }
 }

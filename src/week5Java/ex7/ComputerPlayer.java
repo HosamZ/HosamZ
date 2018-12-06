@@ -9,11 +9,6 @@ public class ComputerPlayer implements Player {
     private List<Move> moves = Arrays.asList(new Rock(),new Scissors(),new Paper());
 
     @Override
-    public String playerName() {
-        return "Computer";
-    }
-
-    @Override
     public Boolean playAgain() {
         return true;
     }

@@ -1,6 +1,7 @@
 package week5Java.ex7;
 
 public interface Move {
-    String moveName();
-    Boolean defeatMove();
+    String getName();
+    Boolean defeatMove(Move move);
+
 }

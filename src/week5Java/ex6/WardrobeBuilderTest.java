@@ -17,13 +17,6 @@ class WardrobeBuilderTest {
         List<String> parts = wardrobe.getParts();
         List<String> wardrobeParts = Arrays.asList("bottom", "side", "side", "back", "top", "shelf", "shelf", "shelf", "shelf", "shelf", "shelf", "shelf", "shelf", "door", "door");
         Assertions.assertEquals(wardrobeParts, parts);
-        //Wardrobe{parts=[bottom, side, side, back, top, shelf, shelf, shelf, shelf, shelf, shelf, shelf, shelf, door, door]}
-
-//        List<String> parts = wardrobe.getParts();
-//        Wardrobe steps = wardrobeBuilder.build();
-//
-//        Assertions.assertEquals(steps,parts);
-
     }
 
     @Test

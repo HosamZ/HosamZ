@@ -12,4 +12,3 @@ public class SuperheroCaller {
         return hero;
     }
 }
-

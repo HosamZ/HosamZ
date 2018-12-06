@@ -9,7 +9,6 @@ public class AdvancedSuperheroApplication {
         for (int times = 0; times < 10; times++) {
             Superhero superhero = caller.call();
             superhero.fight(joker);
-//            joker.weaken(superhero.getName());
         }
     }
 }
