@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class SuperheroCallerTest {
 
     @Test
-    void testNullCaller(){
+    void testNullValue(){
         SuperheroCaller caller = new SuperheroCaller();
         Superhero hero =caller.call();
         Assertions.assertNotNull(hero);

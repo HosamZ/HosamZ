@@ -6,7 +6,7 @@ import java.util.Random;
 
 public class ComputerPlayer implements Player {
     private Random random = new Random();
-    private List<Move> moves = Arrays.asList(new Rock(),new Scissors(),new Paper());
+    private List<Move> moves =Moves.getAsList();
 
     @Override
     public Boolean playAgain() {
@@ -15,7 +15,7 @@ public class ComputerPlayer implements Player {
 
     @Override
     public Move chooseMove() {
-        int position = random.nextInt(3);
+        int position = random.nextInt(moves.size());
         Move move = moves.get(position);
         return move;
     }

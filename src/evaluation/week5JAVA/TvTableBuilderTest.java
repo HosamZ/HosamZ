@@ -15,7 +15,5 @@ class TvTableBuilderTest {
         List<String> parts = tvTable.getParts();
         List<String> tvTableParts = Arrays.asList("leg", "leg", "leg", "leg", "top", "shelf");
         Assertions.assertEquals(tvTableParts, parts);
-
     }
-
 }

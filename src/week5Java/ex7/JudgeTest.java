@@ -9,35 +9,26 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class JudgeTest {
 
+    private final Judge judge = new Judge();
+
     @Test
     void testDescionComputerWin() {
-        Judge judge = new Judge();
         Rock rock = new Rock();
         Paper paper = new Paper();
-        Assertions.assertEquals("Computer win!",judge.descion(rock,paper));
+        Assertions.assertEquals("Computer win!", judge.descion(rock,paper));
 
     }
     @Test
     void testDescionHumanWin(){
-        Judge judge = new Judge();
         Rock rock = new Rock();
         Paper paper = new Paper();
         Assertions.assertEquals("You win!",judge.descion(paper,rock));
     }
     @Test
     void testDraw(){
-        Judge judge = new Judge();
-        Rock rock = new Rock();
-        Paper paper = new Paper();
-        Assertions.assertEquals("Draw",judge.descion(paper,paper));
+        Move move1 = new Paper();
+        Move move2 = new Paper();
+        Assertions.assertEquals("Draw",judge.descion(move1,move2));
     }
-    @Test
-    void testNullValue(){
-        Judge judge = new Judge();
-        Rock rock = new Rock();
-        Paper paper = new Paper();
-        HumanPlayer humanPlayer = new HumanPlayer();
-        Assertions.assertEquals("please enter a valid value?",humanPlayer.chooseMove());
 
-    }
 }

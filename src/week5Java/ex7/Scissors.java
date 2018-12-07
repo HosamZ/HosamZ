@@ -8,9 +8,6 @@ public class Scissors implements Move {
 
     @Override
     public Boolean defeatMove(Move move) {
-        if (move.getName().equals("paper")){
-            return true;
-        }
-        return false;
+        return move.getName().equals("paper");
     }
 }

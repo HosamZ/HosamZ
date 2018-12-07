@@ -1,6 +1,6 @@
 package evaluation.week5JAVA;
 
-public class buildApp {
+public class BuildApp {
     public static void main(String[] args) {
         TvTableBuilder tvTableBuilder = new TvTableBuilder();
         TvTable tvTable = tvTableBuilder.build();
