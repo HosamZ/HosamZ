@@ -18,8 +18,5 @@ public class Wardrobe implements Furniture {
     @Override
     public void add(String part) {
         parts.add(part);
-//        for (String part : parts) {
-//            parts.add(part);
-//        }
     }
 }

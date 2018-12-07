@@ -9,9 +9,6 @@ class HumanPlayerTest {
 
     @Test
     void testNullEntry() {
-      Rock rock = new Rock();
-      Paper paper = new Paper();
-      Scissors scissors = new Scissors();
       HumanPlayer humanPlayer = new HumanPlayer();
       Assertions.assertNotNull(humanPlayer.chooseMove().getName());
     }
