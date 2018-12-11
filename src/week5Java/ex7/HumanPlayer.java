@@ -22,7 +22,7 @@ public class HumanPlayer implements Player {
         showOptions();
         Scanner scanner = new Scanner(System.in);
         String answer = scanner.nextLine();
-        while (!isVaild().contains(answer)){
+        while (!isValid().contains(answer)){
             System.out.println("please enter a valid value?");
             String answer1 = scanner.nextLine();
             answer=answer1;
@@ -35,7 +35,7 @@ public class HumanPlayer implements Player {
         return oMove.get();
     }
 
-    private List<String> isVaild() {
+    private List<String> isValid() {
         List<String> validMoves = new ArrayList<>();
         validMoves.add("rock");
         validMoves.add("paper");
