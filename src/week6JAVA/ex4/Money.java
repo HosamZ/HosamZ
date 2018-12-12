@@ -14,4 +14,5 @@ public abstract class Money {
     public  Boolean isApplicable(Integer cent){
         return cent>=amount;
     }
+
 }
