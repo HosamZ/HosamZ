@@ -20,7 +20,7 @@ public class Validate {
         List<String> oddNumbers = getOddList(allNumbers);
         Integer sumEven = getEvenSum(evenNumbers);
         Integer sumOdd = getOddSum(oddNumbers);
-        return  sumEven +sumOdd ;
+        return  sumEven +sumOdd;
     }
 
     public Integer getEvenSum(List<String> oddNumbers) {

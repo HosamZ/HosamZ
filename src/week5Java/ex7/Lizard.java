@@ -1,11 +1,10 @@
 package week5Java.ex7;
 
-public class Scissors implements Move {
+public class Lizard implements Move {
     @Override
     public String getName() {
-        return "scissors";
+        return "lizard";
     }
-
     @Override
     public Boolean defeatMove(Move move) {
         if (move.getName().equals("paper")||move.getName().equals("spock")){

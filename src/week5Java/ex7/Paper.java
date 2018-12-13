@@ -8,7 +8,7 @@ public class Paper implements Move {
 
     @Override
     public Boolean defeatMove(Move move){
-        if (move.getName().equals("rock")){
+        if (move.getName().equals("rock")||move.getName().equals("spock")){
             return true;
         }
         return false;

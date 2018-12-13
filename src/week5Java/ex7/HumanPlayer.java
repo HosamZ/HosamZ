@@ -13,7 +13,7 @@ public class HumanPlayer implements Player {
         System.out.println("do you want to play again? yes/no");
         Scanner scanner = new Scanner(System.in);
         String answer = scanner.nextLine();
-        return answer.equals("yes");
+        return answer.trim().equals("yes");
     }
 
     @Override
@@ -40,6 +40,8 @@ public class HumanPlayer implements Player {
         validMoves.add("rock");
         validMoves.add("paper");
         validMoves.add("scissors");
+        validMoves.add("spock");
+        validMoves.add("lizard");
         return validMoves;
     }
 

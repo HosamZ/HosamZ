@@ -8,7 +8,7 @@ public class Rock implements Move {
 
     @Override
     public Boolean defeatMove(Move move) {
-        if (move.getName().equals("scissors")){
+        if (move.getName().equals("scissors")||move.getName().equals("lizard")){
             return true;
         }
         return false;

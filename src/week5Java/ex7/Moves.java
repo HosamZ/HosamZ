@@ -6,7 +6,7 @@ import java.util.List;
 
 public class Moves {
     public static List<Move> getAsList() {
-        List<Move> moves = Arrays.asList(new Rock(), new Paper(), new Scissors());
+        List<Move> moves = Arrays.asList(new Rock(), new Paper(), new Scissors(), new Spock(), new Lizard());
         return moves;
     }
 
