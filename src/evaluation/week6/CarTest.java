@@ -9,15 +9,16 @@ class CarTest {
 
     @Test
     void testDriveManual() {
-        Cars cars = new Cars();
-        cars.getNextCarBrand().drive();
-        Assertions.assertEquals("Manual",cars.getNextCarBrand().getBrand());
+        ManualCar manualCar = new ManualCar("Audi");
+        Assertions.assertEquals("Manual Audi",manualCar.drive());
 
 
     }
 
     @Test
     void testDriveAuto() {
+        AutomaticCar automaticCar = new AutomaticCar("Seat");
+        Assertions.assertEquals("Automatic Seat",automaticCar.drive());
 
 
 

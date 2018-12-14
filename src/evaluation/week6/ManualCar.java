@@ -8,6 +8,6 @@ public class ManualCar extends Car {
 
     @Override
     public String drive() {
-        return "Manual";
+        return "Manual "+getBrand();
     }
 }

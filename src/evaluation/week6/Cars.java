@@ -6,10 +6,8 @@ import java.util.Random;
 
 public class Cars {
     private Random random = new Random();
-    static List<Car> carsKind = Arrays.asList(new AutomaticCar("Automatic"),new ManualCar("Manual"));
-
-
-    public Car getNextCarBrand(){
+    public Car getNextCarBrand(String brand){
+        List<Car> carsKind = Arrays.asList(new AutomaticCar(brand),new ManualCar(brand));
         int position = random.nextInt(carsKind.size());
         Car car = carsKind.get(position);
         return car;

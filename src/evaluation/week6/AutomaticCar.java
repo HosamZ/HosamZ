@@ -9,6 +9,6 @@ public class AutomaticCar extends Car {
 
     @Override
     public String drive() {
-        return "Automatic";
+        return "Automatic "+getBrand();
     }
 }
