@@ -15,10 +15,7 @@ class GreedyAlgorithmTest {
         Integer amount = 0;
         List<Money> change = greedyAlgorithm.change(amount);
         Assertions.assertTrue(change.isEmpty());
-
-
     }
-
     @Test
     void testOneOfEach() {
         Integer amount = 88;

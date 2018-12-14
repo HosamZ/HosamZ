@@ -6,13 +6,10 @@ public abstract class Money {
     public Integer getAmount() {
         return amount;
     }
-
     public Money(Integer amount) {
         this.amount = amount;
     }
-
     public  Boolean isApplicable(Integer cent){
         return cent>=amount;
     }
-
 }
