@@ -7,23 +7,18 @@ public class Card {
     private List<CreditCard> cards = Arrays.asList(new MasterCard(), new Visa(), new AmericanExpress());
 
     public String getCard(Long number) {
-        String creditCard = "";
         for (CreditCard card : cards) {
-            Integer spacialNumber = getSpacialNumber(number);
+            Integer spacialNumber = getSpecialNumber(number);
             Integer lenght = getLength(number);
             if (card.checkIsValue(lenght, spacialNumber)) {
-                creditCard = card.getName();
-                return creditCard;
-            } else {
-                creditCard = " Creditcard is Invalid";
-
+                 return card.getName();
             }
         }
 
-        return creditCard;
+        return "Creditcard is Invalid";
     }
 
-    public Integer getSpacialNumber(Long number) {
+    public Integer getSpecialNumber(Long number) {
 
         String numberString = number.toString(number);
         Integer spacialNumber = 0;

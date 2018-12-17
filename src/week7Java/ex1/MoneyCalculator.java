@@ -6,11 +6,8 @@ public class MoneyCalculator {
 
     public Integer getMoney(List<Integer> money) {
         Integer sum = 0;
-
         for (Integer payment : money) {
-//            System.out.println("amount :" +amount);
             sum += payment;
-//            System.out.println("sum :" +sum);
         }
         return sum;
     }

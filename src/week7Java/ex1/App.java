@@ -7,7 +7,8 @@ public class App {
         MoneyCollector moneyCollector = new MoneyCollector();
         MoneyCalculator moneyCalculator = new MoneyCalculator();
         List<Integer> payments = moneyCollector.getPayments();
-        System.out.println("Money Collected from Friends : " + moneyCollector.getPayments());
-        System.out.println("Total sum of the money: " + moneyCalculator.getMoney(payments));
+        Integer total = moneyCalculator.getMoney(payments);
+        System.out.println("Money Collected from Friends : " + payments);
+        System.out.println("Total sum of the money: " + total);
     }
 }
