@@ -1,4 +1,4 @@
-package Week2JAVAPart2.Ex6;
+package week2JAVAPart2.Ex6;
 
 import java.util.Arrays;
 import java.util.List;

@@ -18,9 +18,10 @@ public abstract class CreditCard {
     public List<Integer> getSpecialNumber() {
         return specialNumber;
     }
+
     public abstract String getName();
 
     public Boolean checkIsValue(Integer length, Integer specialNumber) {
-            return getLength().contains(length)&&getSpecialNumber().contains(specialNumber);
+        return getLength().contains(length) && getSpecialNumber().contains(specialNumber);
     }
 }

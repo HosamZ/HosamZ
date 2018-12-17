@@ -1,6 +1,6 @@
-package Week2JAVAPart2.Ex1;
+package week2JAVAPart2.Ex1;
 
-import Week2JAVAPart2.Ex5.Magazine;
+import week2JAVAPart2.Ex5.Magazine;
 
 import java.util.List;
 

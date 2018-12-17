@@ -1,6 +1,6 @@
-package Week2JAVAPart2.Ex6;
+package week2JAVAPart2.Ex6;
 
-import Week2JAVAPart2.Ex3.Tool;
+import week2JAVAPart2.Ex3.Tool;
 
 import java.util.ArrayList;
 import java.util.List;

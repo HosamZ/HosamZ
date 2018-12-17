@@ -7,6 +7,21 @@ import java.util.List;
 
 public class Validate {
 
+    public static Integer getOddSum(List<String> evenNumbers) {
+        Integer sumEven = 0;
+        for (String evenNumber : evenNumbers) {
+            Integer num = Integer.valueOf(evenNumber);
+            if (num >= 5) {
+                num = (num * 2) - 9;
+                sumEven = sumEven + num;
+            } else {
+                num = num * 2;
+                sumEven = sumEven + num;
+            }
+        }
+        return sumEven;
+    }
+
     public Boolean iSCheckValidate(Integer number) {
         return number % 10 == 0;
     }
@@ -20,7 +35,7 @@ public class Validate {
         List<String> oddNumbers = getOddList(allNumbers);
         Integer sumEven = getEvenSum(evenNumbers);
         Integer sumOdd = getOddSum(oddNumbers);
-        return  sumEven +sumOdd;
+        return sumEven + sumOdd;
     }
 
     public Integer getEvenSum(List<String> oddNumbers) {
@@ -30,22 +45,6 @@ public class Validate {
             sumOdd = sumOdd + num;
         }
         return sumOdd;
-    }
-
-    public static Integer getOddSum(List<String> evenNumbers) {
-        Integer sumEven = 0;
-        for (String evenNumber : evenNumbers) {
-            Integer num = Integer.valueOf(evenNumber);
-            if (num >= 5) {
-                num = (num * 2) - 9;
-                sumEven = sumEven + num;
-            } else {
-                num = num * 2;
-                sumEven = sumEven + num;
-            }
-
-        }
-        return sumEven;
     }
 
     public List<String> getEvenList(List<String> allNumbers) {
@@ -73,12 +72,9 @@ public class Validate {
         return oddNumber;
     }
 
-
     public List<String> getSplintList(String number) {
         String[] splint = number.split("");
         List<String> allnumbers = Arrays.asList(splint);
         return allnumbers;
     }
-
-
 }

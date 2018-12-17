@@ -1,6 +1,6 @@
-package Week2JAVAPart2.Ex5;
+package week2JAVAPart2.Ex5;
 
-import Week2JAVAPart2.Ex1.Article;
+import week2JAVAPart2.Ex1.Article;
 
 public class Editor {
 

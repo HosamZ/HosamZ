@@ -1,4 +1,4 @@
-package Week2JAVAPart2.Ex3;
+package week2JAVAPart2.Ex3;
 
 public class Derek {
 

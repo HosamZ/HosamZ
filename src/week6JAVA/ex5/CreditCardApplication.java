@@ -1,29 +1,21 @@
 package week6JAVA.ex5;
-import java.util.Arrays;
-import java.util.List;
 
 public class CreditCardApplication {
     public static void main(String[] args) {
+        getAndTestCard();
+    }
+
+    public static void getAndTestCard() {
         Validate validate = new Validate();
-        Long cardNumber = 378282246310005L;
+        Long cardNumber = 4111111111111111L;
         Integer sum = validate.getSum(cardNumber);
         System.out.println(sum);
         boolean isValid = validate.iSCheckValidate(sum);
+        Card card = new Card();
         System.out.println(isValid);
-        String number = cardNumber.toString(cardNumber);
-        String[] splint = number.split("");
-        List<String> allNumbers = Arrays.asList(splint);
-        System.out.println(allNumbers);
-        System.out.println(number);
-
-
-
-    }
-    public static void startWith(List<String> cards){
-        Card card1 = new Card();
-        for (String card : cards) {
-
+        if (isValid) {
+            String cardN = card.getCard(cardNumber);
+            System.out.println(card.get(cardN).get().getName());
         }
-
     }
 }

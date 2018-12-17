@@ -1,5 +1,5 @@
-package Week2JAVAPart2.Ex5;
-import Week2JAVAPart2.Ex1.Article;
+package week2JAVAPart2.Ex5;
+import week2JAVAPart2.Ex1.Article;
 import java.util.ArrayList;
 import java.util.List;
 public class Magazine {

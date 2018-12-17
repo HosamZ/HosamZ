@@ -1,12 +1,11 @@
 package week5Java.ex7;
 
-import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
 public class ComputerPlayer implements Player {
     private Random random = new Random();
-    private List<Move> moves =Moves.getAsList();
+    private List<Move> moves = Moves.getAsList();
 
     @Override
     public Boolean playAgain() {
@@ -19,5 +18,4 @@ public class ComputerPlayer implements Player {
         Move move = moves.get(position);
         return move;
     }
-
 }

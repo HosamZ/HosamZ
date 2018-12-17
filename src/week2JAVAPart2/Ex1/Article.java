@@ -1,6 +1,4 @@
-package Week2JAVAPart2.Ex1;
-
-import java.util.Scanner;
+package week2JAVAPart2.Ex1;
 
 public class Article {
     public String title;

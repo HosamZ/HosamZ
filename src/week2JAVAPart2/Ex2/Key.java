@@ -1,4 +1,4 @@
-package Week2JAVAPart2.Ex2;
+package week2JAVAPart2.Ex2;
 
 public class Key {
 

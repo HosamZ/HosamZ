@@ -1,4 +1,4 @@
-package Week2JAVAPart2.Ex4;
+package week2JAVAPart2.Ex4;
 
 public class CarShopApplication {
     public static void main(String[] args) {

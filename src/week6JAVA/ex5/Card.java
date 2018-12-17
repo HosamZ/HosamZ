@@ -1,21 +1,20 @@
 package week6JAVA.ex5;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 
 public class Card {
-
-
     private List<CreditCard> cards = Arrays.asList(new MasterCard(), new Visa(), new AmericanExpress());
 
     public String getCard(Long number) {
         String creditCard = "";
         for (CreditCard card : cards) {
             Integer spacialNumber = getSpacialNumber(number);
-            Integer lenght = getLenght(number);
+            Integer lenght = getLength(number);
             if (card.checkIsValue(lenght, spacialNumber)) {
                 creditCard = card.getName();
                 return creditCard;
-            }else {
+            } else {
                 creditCard = " Creditcard is Invalid";
 
             }
@@ -23,6 +22,7 @@ public class Card {
 
         return creditCard;
     }
+
     public Integer getSpacialNumber(Long number) {
 
         String numberString = number.toString(number);
@@ -44,8 +44,7 @@ public class Card {
         return spacialNumber;
     }
 
-
-    public Integer getLenght(Long number) {
+    public Integer getLength(Long number) {
         String numberString = number.toString(number);
         List<String> numbers = getSplintList(numberString);
         return numbers.size();
@@ -57,4 +56,12 @@ public class Card {
         return allnumbers;
     }
 
+    public Optional<CreditCard> get(String name) {
+        for (CreditCard card : cards) {
+            if (card.getName().equalsIgnoreCase(name)) {
+                return Optional.of(card);
+            }
+        }
+        return Optional.empty();
+    }
 }
