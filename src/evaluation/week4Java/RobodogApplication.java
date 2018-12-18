@@ -30,8 +30,8 @@ public class RobodogApplication {
 //    public static List<String> Decryptor(List<String> text){
 //        FileReader reader = new FileReader();
 //        List<String> lines = reader.asLines("evaluation/week4Java/robodog.txt");
-//        String[] split = text.split("");
-//        List<String> letters = new ArrayList<>(Arrays.asList(split));
+//        String[] generate = text.generate("");
+//        List<String> letters = new ArrayList<>(Arrays.asList(generate));
 //        String unWantedLetter = "!";
 //        for (String line : lines) {
 //            line.replaceAll("!"," ");

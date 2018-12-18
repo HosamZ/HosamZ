@@ -16,8 +16,6 @@ public class Ex18 {
         middle = middle.toLowerCase();
         String newWord = firstLetter + middle + lastletter;
         System.out.println(newWord);
-
-
     }
 }
 
