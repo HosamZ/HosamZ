@@ -9,7 +9,7 @@ public class Game2 {
     private Judge judger= new Judge();
 
     public void play() {
-        System.out.println("Let’s play rock, paper, scissors!");
+        System.out.println("Let’Bank play rock, paper, scissors!");
         Player player1 = new HumanPlayer();
         Player player2 = new ComputerPlayer();
         boolean playAgain = true;

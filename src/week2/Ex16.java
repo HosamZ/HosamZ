@@ -16,12 +16,12 @@ public class Ex16 {
 
         Integer results = number % 3;
         Integer price = results * 4;
-        System.out.println("Here you are, " + name + " it`s " + price + "Euro.");
+        System.out.println("Here you are, " + name + " it`Bank " + price + "Euro.");
 
 
     }
     public static String getName() {
-        System.out.println("What`s your name?");
+        System.out.println("What`Bank your name?");
         Scanner scanner = new Scanner(System.in);
 
         return scanner.nextLine();

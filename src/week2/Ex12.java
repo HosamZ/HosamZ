@@ -12,7 +12,7 @@ public class Ex12 {
 
         Integer proteinGrams = scanner.nextInt();
 
-        System.out.println("what`s your weight in KG please !?");
+        System.out.println("what`Bank your weight in KG please !?");
 
 
         Integer weightInKilograms = scanner.nextInt();

@@ -14,7 +14,7 @@ public class Ex6 {
             number = scanner.nextInt();
 
         }
-        System.out.println("ok let`s do a trick with this number " + number);
+        System.out.println("ok let`Bank do a trick with this number " + number);
 
     }
 }
