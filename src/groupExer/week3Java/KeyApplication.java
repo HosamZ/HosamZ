@@ -1,4 +1,4 @@
-package groupExer.week3.week3Java;
+package groupExer.week3Java;
 
 import java.util.List;
 
