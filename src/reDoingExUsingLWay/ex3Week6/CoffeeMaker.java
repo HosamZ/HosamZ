@@ -1,5 +1,4 @@
-package reDoingExUsingLWay;
-
+package reDoingExUsingLWay.ex3Week6;
 public abstract class CoffeeMaker {
     protected abstract String getName();
 

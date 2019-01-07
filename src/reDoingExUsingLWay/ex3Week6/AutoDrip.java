@@ -1,4 +1,4 @@
-package reDoingExUsingLWay;
+package reDoingExUsingLWay.ex3Week6;
 
 public class AutoDrip extends CoffeeMaker {
     @Override

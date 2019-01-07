@@ -1,8 +1,7 @@
-package reDoingExUsingLWay;
+package reDoingExUsingLWay.ex3Week6;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-
 import java.util.Optional;
 
 class CoffeeMakersTest {

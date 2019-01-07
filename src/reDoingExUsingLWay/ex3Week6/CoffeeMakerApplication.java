@@ -1,4 +1,4 @@
-package reDoingExUsingLWay;
+package reDoingExUsingLWay.ex3Week6;
 
 import java.util.Arrays;
 import java.util.List;
