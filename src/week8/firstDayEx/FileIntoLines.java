@@ -1,4 +1,4 @@
-package week8;
+package week8.firstDayEx;
 
 import week4Java.ex9.FileReader;
 

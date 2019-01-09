@@ -1,4 +1,4 @@
-package week8;
+package week8.firstDayEx;
 
 import java.util.Arrays;
 import java.util.List;

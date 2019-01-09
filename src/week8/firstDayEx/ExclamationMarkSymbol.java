@@ -1,4 +1,4 @@
-package week8;
+package week8.firstDayEx;
 
 public class ExclamationMarkSymbol implements Decryptor {
 

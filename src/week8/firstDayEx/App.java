@@ -1,4 +1,4 @@
-package week8;
+package week8.firstDayEx;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,7 +8,7 @@ public class App {
     public static void main(String[] args) {
         Sensor sensor = new Sensor();
         FileIntoLines file = new FileIntoLines();
-        List<String> lines = file.getLines("week8/robomime.txt");
+        List<String> lines = file.getLines("week8/firstDayEx/robomime.txt");
         List<String> tricks = new ArrayList<>();
         for (String line : lines) {
             Optional<String> decrypt = sensor.decrypt(line);
