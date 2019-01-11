@@ -4,43 +4,34 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 class ThermostatTest {
+    private Thermostat thermostat = new Thermostat(s -> s < 0, t -> t + "degrees celsius");
+    private Thermostat thermostat2 = new Thermostat(s -> s >= 80, t -> t + 273.15 + "degrees Kelvin");
 
     @Test
     void testSkiing() {
-        Thermostat thermostat = new Thermostat(s -> s < 0, t -> t + "degrees celsius");
+        Double temperature = 2.0;
+        Double temperature2 = -1.0;
 
-        Double temperatur = 2.0;
-        String actual = thermostat.sense(temperatur);
-        String expected = temperatur + "degrees celsius";
-
-        Assertions.assertEquals(expected, actual);
-    }
-
-    @Test
-    void testWarningSkiing() {
-        Thermostat thermostat = new Thermostat(s -> s < 0, t -> t + "degrees celsius");
-
-        Double temperatur = -1.0;
-        String actual = thermostat.sense(temperatur);
-        String expected = temperatur + "Warning!";
+        String actual = thermostat.sense(temperature);
+        String expected = temperature + "degrees celsius";
+        String actual2 = thermostat.sense(temperature2);
+        String expected2 = "Warning!";
 
         Assertions.assertEquals(expected, actual);
+        Assertions.assertEquals(expected2, actual2);
     }
 
     @Test
     void testSauna() {
-        Thermostat thermostat = new Thermostat(s -> s >= 80, t -> t+273.15+ "degrees Kelvin");
-        Thermostat thermostat2 = new Thermostat(s -> s >= 80, t -> t+273.15+ "degrees Kelvin");
+        Double temperature = 79.0;
+        Double temperature2 = 80.0;
 
-        Double temperatur = 79.0;
-        Double temperatur2 = 80.0;
-        String actual = thermostat.sense(temperatur);
-        String actual2 = thermostat.sense(temperatur2);
-        String expected = temperatur+273.15+"degrees Kelvin";
+        String actual = thermostat2.sense(temperature);
+        String actual2 = thermostat2.sense(temperature2);
+        String expected = temperature + 273.15 + "degrees Kelvin";
         String expected2 = "Warning!";
 
-        Assertions.assertEquals(expected,actual);
-        Assertions.assertEquals(expected2,actual2);
-
+        Assertions.assertEquals(expected, actual);
+        Assertions.assertEquals(expected2, actual2);
     }
 }
