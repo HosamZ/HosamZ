@@ -7,10 +7,10 @@ import java.util.function.Function;
 
 public class PowerLevelScouter {
     public Integer scout(String name) {
-        return calculate(name, n->getLettersAsciiSum(n));
+        return calculate(name, n -> getLettersAsciiSum(n));
     }
 
-    private Integer calculate(String name, Function<String, Integer> calculation){
+    private Integer calculate(String name, Function<String, Integer> calculation) {
         return calculation.apply(name);
     }
 
@@ -19,7 +19,7 @@ public class PowerLevelScouter {
         String asciiString = Arrays.toString(ascii);
         String modified = asciiString.substring(1, asciiString.length() - 1);
         List<String> codes = Arrays.asList(modified.split(", "));
-        Integer sum= 0;
+        Integer sum = 0;
         for (String code : codes) {
             Integer number = Integer.valueOf(code);
             sum += number;
@@ -28,6 +28,6 @@ public class PowerLevelScouter {
     }
 
     public Integer scoutEnhanced(String name) {
-        return calculate(name, n-> getLettersAsciiSum(n.toLowerCase()));
+        return calculate(name, n -> getLettersAsciiSum(n.toLowerCase()));
     }
 }
