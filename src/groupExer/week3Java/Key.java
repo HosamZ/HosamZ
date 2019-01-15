@@ -12,11 +12,13 @@ public class Key {
     {
         this.numberKey = numberKey;
     }
+
     public List<String> getLetters(String text) {
         String[] split = text.split("");
         List<String> letters = new ArrayList<>(Arrays.asList(split));
         return letters;
     }
+
     public List<String> applyKey(List<String> words) {
         List<String> letters = new ArrayList<>();
         for (String word : words) {
@@ -31,6 +33,7 @@ public class Key {
         }
         return letters;
     }
+
     public String ciphertext(List<String> letters) {
         String ciphertext = "";
 
@@ -39,23 +42,17 @@ public class Key {
         }
         return ciphertext;
     }
+
     public int toAscii(String letter) {
         char character = letter.charAt(0);
         int asciiCode = character;
 
         return asciiCode;
     }
+
     public String toLetter(int asciiCode) {
         char character = (char) asciiCode;
 
         return String.valueOf(character);
-    }
-    public Integer getNumberKey()
-    {
-        return numberKey;
-    }
-    public void setNumberKey(Integer numberKey)
-    {
-        this.numberKey = numberKey;
     }
 }
