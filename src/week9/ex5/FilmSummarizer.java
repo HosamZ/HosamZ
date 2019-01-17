@@ -30,7 +30,7 @@ public class FilmSummarizer {
                 .limit(3)
                 .map(Film::getTitle)
                 .collect(Collectors.toList());
-        System.out.println("top3 880674609 REVENUE movies : ");
+        System.out.println("\ntop3 880674609 REVENUE movies : ");
         System.out.println(randomRevenueBasedFilm);
     }
 
@@ -43,7 +43,7 @@ public class FilmSummarizer {
                 .limit(2)
                 .map(Film::getTitle)
                 .collect(Collectors.toList());
-        System.out.println("top 2 Films over 60 mins : ");
+        System.out.println("\ntop 2 Films over 60 mins : ");
         System.out.println(top2FilmsOver60Mins);
     }
 
@@ -55,7 +55,7 @@ public class FilmSummarizer {
                 .limit(4)
                 .map(Film::getTitle)
                 .collect(Collectors.toList());
-        System.out.println("Top 4 most rated over 7 and budget between 50.000 and 500.000, sorted by budget: ");
+        System.out.println("\nTop 4 most rated over 7 and budget between 50.000 and 500.000, sorted by budget: ");
         System.out.println(top4Over7AndBudgetLimited);
     }
 
@@ -67,7 +67,7 @@ public class FilmSummarizer {
 //                .peek(e -> System.out.println("movie: " + e.getTitle() + " runtime: " + e.getRunTime()))
                 .map(Film::getTitle)
                 .collect(Collectors.toList());
-        System.out.println("Top 4 most expensive shorter than 90 minutes, sorted by budget: ");
+        System.out.println("\nTop 4 most expensive shorter than 90 minutes, sorted by budget: ");
         System.out.println(top4ExpensiveShorterThan90Movies);
     }
 
@@ -78,7 +78,7 @@ public class FilmSummarizer {
                 .limit(4)
                 .map(Film::getTitle)
                 .collect(Collectors.toList());
-        System.out.println("Top 4 most expensive, sorted by budget: ");
+        System.out.println("\nTop 4 most expensive, sorted by budget: ");
         System.out.println(topBudgetMovies);
     }
 
@@ -89,7 +89,7 @@ public class FilmSummarizer {
                 .limit(3)
                 .map(Film::getTitle)
                 .collect(Collectors.toList());
-        System.out.println("Top 3 with highest rating longer than 3 hours, sorted by rating: ");
+        System.out.println("\nTop 3 with highest rating longer than 3 hours, sorted by rating: ");
         System.out.println(collect);
     }
 

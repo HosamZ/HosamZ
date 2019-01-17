@@ -26,5 +26,5 @@ public class ToolBox {
 //A ShopAssistant has no attributes. It has the findToolbox method that receives a list of
 // String representing the names of the tools the customer asks for and returns a Toolbox. In order to
 // create a Toolbox it creates one article per tool requested adding them to the Toolbox then it returns it.
-//In the ToolShopApplication class main method, create a list of String with three tool names
+//In the ToolShopApplication class App method, create a list of String with three tool names
 // inside, create a ShopAssistant and use it to find a red Toolbox with those three tools inside.

@@ -5,7 +5,7 @@
 //
 //public class Ex10 {
 //
-//    public static void main(String[] args) {
+//    public static void App(String[] args) {
 //        List<Integer> numbers = new ArrayList<>();
 //        numbers.add(0);
 //        numbers.add(1);

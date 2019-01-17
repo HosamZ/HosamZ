@@ -10,7 +10,7 @@ public class HappinessApplication {
                 .skip(1)
                 .map(line -> line.split(";"))
                 .map(line -> new HappinessRecord(Integer.valueOf(line[1]), line[0], Double.valueOf(line[2])))
-                .sorted(Comparator.comparing(e -> e.getRank()))
+                .sorted(Comparator.comparing(HappinessRecord::getRank))
                 .limit(5)
                 .forEach(line -> System.out.println("Rank: " + line.getRank() + " | Country: " + line.getCountry() +
                         " | Score: " + line.getScore()));
