@@ -3,7 +3,6 @@ package evaluation.week9;
 import week4Java.ex9.FileReader;
 
 import java.util.Arrays;
-import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -15,18 +14,38 @@ public class StudentPerformancesApp {
         femaleStudentsCount(reader);
         maleNumbers(reader);
         getParentalEducation(reader);
-        List<List<String>> collect = getFileAsStream(reader)
+        getScoresHigherThan90(reader);
+        getScoresHigherThan100(reader);
+        
+
+    }
+
+    public static void getScoresHigherThan90(FileReader reader) {
+
+        getScoresHigherThan100(reader);
+        long scoresHigherThan90 = getFileAsStream(reader)
+                .map(line -> Arrays.asList(line.split(";")))
+                .filter(line -> Integer.valueOf(line.get(2)) > 90)
+                .filter(line -> Integer.valueOf(line.get(3)) > 90)
+                .filter(line -> Integer.valueOf(line.get(4)) > 90)
+                .count();
+        System.out.println(scoresHigherThan90);
+    }
+
+    public static void getScoresHigherThan100(FileReader reader) {
+        long scoresHigherThan100 = getFileAsStream(reader)
                 //Number of students with scores higher than 90: 23
                 .map(line -> Arrays.asList(line.split(";")))
 //                .map(line->Arrays.asList(line.get(2),line.get(3),line.get(4)))
 //                .map(line->Arrays.asList(line.get(2)+line.get(3)+line.get(4)))
-                .filter(line -> Integer.valueOf(line.get(2)) > 90)
-                .filter(line -> Integer.valueOf(line.get(3)) > 90)
-                .filter(line -> Integer.valueOf(line.get(4)) > 90)
-                .collect(Collectors.toList());
-        System.out.println(collect);
-
+                .filter(line -> Integer.valueOf(line.get(2)) > 100)
+                .filter(line -> Integer.valueOf(line.get(3)) > 100)
+                .filter(line -> Integer.valueOf(line.get(4)) > 100)
+                .count();
+        System.out.println(scoresHigherThan100);
     }
+
+}
 
     public static void getParentalEducation(FileReader reader) {
         List<String> collect = getFileAsStream(reader)
