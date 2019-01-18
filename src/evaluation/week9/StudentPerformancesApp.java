@@ -28,6 +28,7 @@ public class StudentPerformancesApp {
 
         getScoresHigherThan100(reader);
         long scoresHigherThan90 = getFileAsStream(reader)
+                .skip(1)
                 .map(line -> Arrays.asList(line.split(";")))
                 .filter(line -> Integer.valueOf(line.get(2)) > 90)
                 .filter(line -> Integer.valueOf(line.get(3)) > 90)
@@ -37,16 +38,16 @@ public class StudentPerformancesApp {
     }
 
     public static void getScoresHigherThan100(FileReader reader) {
-        long scoresHigherThan100 = getFileAsStream(reader)
+        List<String> scoresHigherThan100 = getFileAsStream(reader)
+                .skip(1)
                 .map(line -> Arrays.asList(line.split(";")))
-                .filter(line -> Integer.valueOf(line.get(2)) > 100)
-                .filter(line -> Integer.valueOf(line.get(3)) > 100)
-                .filter(line -> Integer.valueOf(line.get(4)) > 100)
-                .count();
+                .filter(line -> Integer.valueOf(line.get(2)) == 100)
+                .filter(line -> Integer.valueOf(line.get(3)) == 100)
+                .filter(line -> Integer.valueOf(line.get(4)) == 100)
+                .map(line->line.get(0))
+                .collect(Collectors.toList());
         System.out.println(scoresHigherThan100);
     }
-
-}
 
     public static void getParentalEducation(FileReader reader) {
         List<String> collect = getFileAsStream(reader)
@@ -61,7 +62,8 @@ public class StudentPerformancesApp {
     public static void maleNumbers(FileReader reader) {
         long maleNumbers = getFileAsStream(reader)
                 .skip(1)
-                .filter(line -> line.contains("male"))
+                .map(line->line.split(";"))
+                .filter(line -> line[0].equals("male"))
                 .count();
         System.out.println("Number of male students: " + maleNumbers);
     }
