@@ -10,14 +10,18 @@ import java.util.stream.Stream;
 public class StudentPerformancesApp {
     public static void main(String[] args) {
         FileReader reader = new FileReader();
+        studentsStatistics(reader);
+
+
+    }
+
+    public static void studentsStatistics(FileReader reader) {
         numberOfStudentsEntries(reader);
         femaleStudentsCount(reader);
         maleNumbers(reader);
         getParentalEducation(reader);
         getScoresHigherThan90(reader);
         getScoresHigherThan100(reader);
-        
-
     }
 
     public static void getScoresHigherThan90(FileReader reader) {
@@ -34,10 +38,7 @@ public class StudentPerformancesApp {
 
     public static void getScoresHigherThan100(FileReader reader) {
         long scoresHigherThan100 = getFileAsStream(reader)
-                //Number of students with scores higher than 90: 23
                 .map(line -> Arrays.asList(line.split(";")))
-//                .map(line->Arrays.asList(line.get(2),line.get(3),line.get(4)))
-//                .map(line->Arrays.asList(line.get(2)+line.get(3)+line.get(4)))
                 .filter(line -> Integer.valueOf(line.get(2)) > 100)
                 .filter(line -> Integer.valueOf(line.get(3)) > 100)
                 .filter(line -> Integer.valueOf(line.get(4)) > 100)
@@ -49,8 +50,8 @@ public class StudentPerformancesApp {
 
     public static void getParentalEducation(FileReader reader) {
         List<String> collect = getFileAsStream(reader)
-                .map(line-> Arrays.asList(line.split(";")))
-                .map(line->line.get(1))
+                .map(line -> Arrays.asList(line.split(";")))
+                .map(line -> line.get(1))
                 .distinct()
                 .collect(Collectors.toList());
         System.out.println("Parental education levels sorted alphabetically: ");
@@ -62,7 +63,7 @@ public class StudentPerformancesApp {
                 .skip(1)
                 .filter(line -> line.contains("male"))
                 .count();
-        System.out.println("Number of male students: "+maleNumbers);
+        System.out.println("Number of male students: " + maleNumbers);
     }
 
     public static void femaleStudentsCount(FileReader reader) {
@@ -70,7 +71,7 @@ public class StudentPerformancesApp {
                 .skip(1)
                 .filter(line -> line.contains("female"))
                 .count();
-        System.out.println("Number of female students: "+femaleNumbers);
+        System.out.println("Number of female students: " + femaleNumbers);
     }
 
     public static Stream<String> getFileAsStream(FileReader reader) {
@@ -81,6 +82,6 @@ public class StudentPerformancesApp {
         long performanceCount = reader.asStream("evaluation/week9/students-performance.csv")
                 .skip(1)
                 .count();
-        System.out.println("Total number of student performance entries: "+performanceCount);
+        System.out.println("Total number of student performance entries: " + performanceCount);
     }
 }
