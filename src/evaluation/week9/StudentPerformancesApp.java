@@ -13,7 +13,8 @@ public class StudentPerformancesApp {
         studentsStatistics(reader);
     }
 
-    private static void studentsStatistics(FileReader reader) {
+    private static void studentsStatistics(FileReader   reader) {
+
         numberOfStudentsEntries(reader);
         femaleStudentsCount(reader);
         maleNumbers(reader);
@@ -71,7 +72,7 @@ public class StudentPerformancesApp {
     private static void femaleStudentsCount(FileReader reader) {
         long femaleNumbers = getFileAsStream(reader)
                 .skip(1)
-                .filter(line -> line.contains("female"))
+                .filter(line -> line.equals("female"))
                 .count();
         System.out.println("Number of female students: " + femaleNumbers);
     }

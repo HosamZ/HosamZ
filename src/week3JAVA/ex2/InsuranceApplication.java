@@ -20,16 +20,5 @@ public class InsuranceApplication {
             String  template = chooser.chooseTemplate(customer);
             System.out.println(customer.getName() + " "+template);
         }
-
-        //        chooser.chooseTemplate(customer);
-//        chooser.chooseTemplate(customer1);
-//        chooser.chooseTemplate(customer2);
-//        chooser.chooseTemplate(customer3);
-//        chooser.chooseTemplate(customer4);
-
-//        System.out.println(customer1.getName()+" "+customer1.getTemplate());
-//        System.out.println(customer2.getName()+" "+customer2.getTemplate());
-//        System.out.println(customer3.getName()+" "+customer3.getTemplate());
-//        System.out.println(customer4.getName()+" "+customer4.getTemplate());
     }
 }

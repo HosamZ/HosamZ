@@ -13,7 +13,7 @@ public class FilmReader {
         return getFilmsAsStream()
                 .skip(1)
                 .map(line -> line.split(";"))
-                .map(this::getFilmStats)//.map(line -> getFilmStats(line))
+                .map(line -> getFilmStats(line))//.map(line -> getFilmStats(line))
 //                .peek(e -> System.out.println("movie: " + e.getTitle() + " runtime: " + e.getRunTime()))
                 .collect(Collectors.toList());
     }
