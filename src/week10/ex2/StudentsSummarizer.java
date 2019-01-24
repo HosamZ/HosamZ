@@ -18,7 +18,6 @@ public class StudentsSummarizer {
 
     private static void isScoresHigherThan95(List<Student> getStudentFileAsStream) {
         boolean high_school = getStudentFileAsStream.stream()
-                .flatMap(Stream::of)
                 .filter(e -> e.getParentalEducation().equals("some high school"))
                 .anyMatch(StudentsSummarizer::getScoresHigherThan95);
         System.out.println("Is there any student with a parent education level of some high school that has at least 97 in every topic? ");
@@ -32,7 +31,6 @@ public class StudentsSummarizer {
     private static void getGenderOfHighestAvgScores(List<Student> getStudentFileAsStream) {
         System.out.println("Genders and average scores of the top four average score students: ");
         getStudentFileAsStream.stream()
-                .flatMap(Stream::of)
                 .map(e -> avgNumber(e) + e.getGender())
                 .sorted(Comparator.reverseOrder())
                 .limit(4)

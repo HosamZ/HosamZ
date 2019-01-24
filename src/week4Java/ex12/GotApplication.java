@@ -60,8 +60,7 @@ public class GotApplication {
                 menDeaths.add(character);
             }
         }
-        Integer numberOfMenWhoDied = menDeaths.size();
-        return numberOfMenWhoDied;
+        return menDeaths.size();
     }
     private static Integer characterDeath() {
         CharacterReader reader = new CharacterReader();

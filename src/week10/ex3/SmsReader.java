@@ -14,5 +14,4 @@ public class SmsReader {
                 .map(columns -> new Sms(columns[0], columns[1]))
                 .collect(Collectors.toList());
     }
-
 }

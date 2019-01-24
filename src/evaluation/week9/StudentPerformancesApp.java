@@ -23,6 +23,30 @@ public class StudentPerformancesApp {
         getScoresHigherThan100(reader);
     }
 
+    private static void numberOfStudentsEntries(FileReader reader) {
+        long performanceCount = reader.asStream("evaluation/week9/students-performance.csv")
+                .skip(1)
+                .count();
+        System.out.println("Total number of student performance entries: " + performanceCount);
+    }
+
+    private static void femaleStudentsCount(FileReader reader) {
+        long femaleNumbers = getFileAsStream(reader)
+                .skip(1)
+                .filter(line -> line.equals("female"))
+                .count();
+        System.out.println("Number of female students: " + femaleNumbers);
+    }
+
+    private static void maleNumbers(FileReader reader) {
+        long maleNumbers = getFileAsStream(reader)
+                .skip(1)
+                .map(line -> line.split(";"))
+                .filter(line -> line[0].equals("male"))
+                .count();
+        System.out.println("Number of male students: " + maleNumbers);
+    }
+
     private static void getScoresHigherThan90(FileReader reader) {
 
         getFileAsStream(reader);
@@ -60,31 +84,7 @@ public class StudentPerformancesApp {
         System.out.println(collect);
     }
 
-    private static void maleNumbers(FileReader reader) {
-        long maleNumbers = getFileAsStream(reader)
-                .skip(1)
-                .map(line -> line.split(";"))
-                .filter(line -> line[0].equals("male"))
-                .count();
-        System.out.println("Number of male students: " + maleNumbers);
-    }
-
-    private static void femaleStudentsCount(FileReader reader) {
-        long femaleNumbers = getFileAsStream(reader)
-                .skip(1)
-                .filter(line -> line.equals("female"))
-                .count();
-        System.out.println("Number of female students: " + femaleNumbers);
-    }
-
     private static Stream<String> getFileAsStream(FileReader reader) {
         return reader.asStream("evaluation/week9/students-performance.csv");
-    }
-
-    private static void numberOfStudentsEntries(FileReader reader) {
-        long performanceCount = reader.asStream("evaluation/week9/students-performance.csv")
-                .skip(1)
-                .count();
-        System.out.println("Total number of student performance entries: " + performanceCount);
     }
 }

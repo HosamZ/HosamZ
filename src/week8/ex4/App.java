@@ -10,7 +10,7 @@ public class App {
 //        byte[] ascii = "Susana".getBytes(StandardCharsets.US_ASCII);
 //        String asciiString = Arrays.toString(ascii);
 //        String modified = asciiString.substring(1, asciiString.length() - 1);
-//        List<String> codes = Arrays.asList(modified.split(", "));
+//        List<String> codes = Arrays.getCharacter(modified.split(", "));
 //        for (String code : codes) {
 //            Integer number = Integer.valueOf(code);
 //            sum += number;

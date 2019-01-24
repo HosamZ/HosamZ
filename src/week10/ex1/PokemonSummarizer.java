@@ -20,7 +20,7 @@ public class PokemonSummarizer {
                 .collect(Collectors.groupingBy(e -> e.getName().length(), Collectors.toList()));
         System.out.println("//////////////");
         pokemonNamesLength.entrySet().stream()
-                .sorted(Comparator.comparing(integerListEntry -> integerListEntry.getKey()))
+                .sorted(Comparator.comparing(Map.Entry::getKey))
                 .map(e -> e.getKey() + " | " + getPokemonNames(e.getValue()))
                 .forEach(s -> System.out.println("number of letters in Pokemon name: " + s));
     }
@@ -41,7 +41,7 @@ public class PokemonSummarizer {
 
     private static void pokemonTotalNumber(List<Pokemon> pokemonReader) {
         long pokemonNumber = pokemonReader.stream()
-                .map(pokemon -> pokemon.getName())
+                .map(Pokemon::getName)
                 .count();
         System.out.println("total pokemon`s number: " + pokemonNumber);
     }
