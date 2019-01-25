@@ -6,27 +6,26 @@ import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class AliceSummeraizer {
+public class AliceSummarizer {
     public static void main(String[] args) {
         List<String> words = new TxtReader().asList("evaluation/week10/alice.txt");
-        getWordsCount(words);
-        getFileDistnictWordsCount(words);
-        getMost5AppearingWords(words);
-        getLongestWord(words);
-        getMost5AppearingLetters(words);
-        getAliceAppearnce(words);
-
+        displayWordsCount(words);
+        displayFileDistinctWordsCount(words);
+        displayMost5AppearingWords(words);
+        displayLongestWord(words);
+        displayMost5AppearingLetters(words);
+        displayAliceAppearance(words);
     }
 
-    private static void getAliceAppearnce(List<String> getTxtFile) {
-        long aliceCounter = getTxtFile.stream()
+    private static void displayAliceAppearance(List<String> getTxtFile) {
+        long aliceWordCounter = getTxtFile.stream()
                 .filter(e -> e.equalsIgnoreCase("Alice"))
                 .count();
-        System.out.println(aliceCounter);
+        System.out.println("Alice word appearance: "+aliceWordCounter);
     }
 
-    private static void getMost5AppearingLetters(List<String> getTxtFile) {
-        List<String> getMost5AppearingLetters = getTxtFile.stream()
+    private static void displayMost5AppearingLetters(List<String> getTxtFile) {
+        List<String> mostAppearingLetters = getTxtFile.stream()
                 .map(word -> word.split(""))
                 .flatMap(Stream::of)
                 .collect(Collectors.groupingBy(e -> e, Collectors.counting()))
@@ -35,22 +34,20 @@ public class AliceSummeraizer {
                 .limit(5)
                 .map(e -> e.getKey() + " | " + e.getValue())
                 .collect(Collectors.toList());
-        getMost5AppearingLetters.forEach(System.out::println);
+        mostAppearingLetters.forEach(System.out::println);
     }
 
-    private static void getLongestWord(List<String> getTxtFile) {
+    private static void displayLongestWord(List<String> getTxtFile) {
         getTxtFile.stream()
                 .collect(Collectors.groupingBy(e -> e.length(), Collectors.toList()))
                 .entrySet().stream()
                 .sorted(Comparator.comparing(Map.Entry<Integer, List<String>>::getKey).reversed())
-
                 .map(Map.Entry::getValue)
                 .findFirst()
                 .ifPresent(System.out::println);
-//        System.out.println(longestWords);
     }
 
-    private static void getMost5AppearingWords(List<String> getTxtFile) {
+    private static void displayMost5AppearingWords(List<String> getTxtFile) {
         List<String> mostAppearing5Words = getTxtFile.stream()
                 .collect(Collectors.groupingBy(e -> e, Collectors.counting()))
                 .entrySet().stream()
@@ -61,16 +58,16 @@ public class AliceSummeraizer {
         mostAppearing5Words.forEach(System.out::println);
     }
 
-    private static void getFileDistnictWordsCount(List<String> getTxtFile) {
-        long count = getTxtFile.stream()
+    private static void displayFileDistinctWordsCount(List<String> getTxtFile) {
+        long distinctWordsCount = getTxtFile.stream()
                 .distinct()
                 .count();
-        System.out.println(count);
+        System.out.println(distinctWordsCount);
     }
 
-    private static void getWordsCount(List<String> getTxtFile) {
-        long count = getTxtFile.stream()
+    private static void displayWordsCount(List<String> getTxtFile) {
+        long wordsCount = getTxtFile.stream()
                 .count();
-        System.out.println(count);
+        System.out.println(wordsCount);
     }
 }

@@ -31,7 +31,7 @@ public class RobodogApplication {
 //        FileReader reader = new FileReader();
 //        List<String> lines = reader.asLines("evaluation/week4Java/robodog.txt");
 //        String[] generate = text.generate("");
-//        List<String> letters = new ArrayList<>(Arrays.getCharacter(generate));
+//        List<String> letters = new ArrayList<>(Arrays.getCharacters(generate));
 //        String unWantedLetter = "!";
 //        for (String line : lines) {
 //            line.replaceAll("!"," ");

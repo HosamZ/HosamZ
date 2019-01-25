@@ -9,7 +9,7 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class SmsSummarizerTest {
+class SmsSummarizerTest {
     private List<Sms> sms = new SmsReader().asList("week10/ex3/sms.csv");
 
     @Test

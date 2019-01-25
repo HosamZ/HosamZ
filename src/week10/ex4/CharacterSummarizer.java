@@ -6,31 +6,31 @@ import java.util.stream.Collectors;
 
 public class CharacterSummarizer {
     public static void main(String[] args) {
-        List<Character> getCharacterFileAsStream = new CharcatersReader().getCharacter();
-        getGameOfThronesStatistics(getCharacterFileAsStream);
+        List<Character> characters = new CharcatersReader().getCharacters();
+        displayGameOfThronesStatistics(characters);
     }
 
-    private static void getGameOfThronesStatistics(List<Character> getCharacterFileAsStream) {
-        getAllCharNumberInBooks(getCharacterFileAsStream);
-        getAllDeadCharacters(getCharacterFileAsStream);
-        getDeadMenCharacterNumber(getCharacterFileAsStream);
-        getDeadWomenCharacterNumber(getCharacterFileAsStream);
-        getBiggestDeathBook(getCharacterFileAsStream);
-        getAllDeadCharacterInBook3(getCharacterFileAsStream);
-        getTwoAllegiancesBiggestDeadCount(getCharacterFileAsStream);
-        getNobilityCharactersPercentageDeaths(getCharacterFileAsStream);
-        getBookDeathAmountInLannister(getCharacterFileAsStream);
-        getBookDeathAmountInStark(getCharacterFileAsStream);
-        getStarksDeathsCount(getCharacterFileAsStream);
-        getLannisterDeadCharacters(getCharacterFileAsStream);
-        isAnyCharacterDidNotDie(getCharacterFileAsStream);
-        hasAnyCharaterDiedInSameChapter(getCharacterFileAsStream);
+    private static void displayGameOfThronesStatistics(List<Character> characters) {
+        displayAllCharactersNumberInBooks(characters);
+        getAllDeadCharacters(characters);
+        getDeadMenCharacterNumber(characters);
+        getDeadWomenCharacterNumber(characters);
+        getBiggestDeathBook(characters);
+        getAllDeadCharacterInBook3(characters);
+        getTwoAllegiancesBiggestDeadCount(characters);
+        getNobilityCharactersPercentageDeaths(characters);
+        getBookDeathAmountInLannister(characters);
+        getBookDeathAmountInStark(characters);
+        getStarksDeathsCount(characters);
+        getLannisterDeadCharacters(characters);
+        isAnyCharacterDidNotDie(characters);
+        hasAnyCharaterDiedInSameChapter(characters);
     }
 
     private static void hasAnyCharaterDiedInSameChapter(List<Character> getCharacterFileAsStream) {
-        boolean isCharacterDiedInSameChapter = getCharacterFileAsStream.stream()
-                .anyMatch(e -> e.getDeathChapter() == e.getBookOfDeath());
-        System.out.println("is there any Character died in same Chapter? "+isCharacterDiedInSameChapter);
+        boolean didAnyoneDie = getCharacterFileAsStream.stream()
+                .anyMatch(e -> e.getDeathChapter().equals(e.getBookOfDeath()));
+        System.out.println("is there any Character died in same Chapter? " + didAnyoneDie);
     }
 
     private static void isAnyCharacterDidNotDie(List<Character> getCharacterFileAsStream) {
@@ -40,11 +40,11 @@ public class CharacterSummarizer {
     }
 
     private static void getLannisterDeadCharacters(List<Character> getCharacterFileAsStream) {
-        long getLannisterDeathsCount = getCharacterFileAsStream.stream()
+        long lannisterDeathCount = getCharacterFileAsStream.stream()
                 .filter(e -> !e.getBookOfDeath().isEmpty())
                 .filter(e -> e.getAllegiances().equalsIgnoreCase("Lannister"))
                 .count();
-        System.out.println("Lannister`s dead Characters: " + getLannisterDeathsCount);
+        System.out.println("Lannister`s dead Characters: " + lannisterDeathCount);
     }
 
     private static void getStarksDeathsCount(List<Character> getCharacterFileAsStream) {
@@ -55,7 +55,7 @@ public class CharacterSummarizer {
         System.out.println("Stark`s dead Characters: " + getStarksDeathsCount);
     }
 
-    private static void getBookDeathAmountInStark(List<Character> getCharacterFileAsStream) {
+    private static void getBookDeathAmountInLannister(List<Character> getCharacterFileAsStream) {
         System.out.println("book die the most amount of characters from the Lannister allegiance: ");
         getCharacterFileAsStream.stream()
                 .filter(e -> !e.getBookOfDeath().isEmpty())
@@ -68,7 +68,7 @@ public class CharacterSummarizer {
                 .findFirst().ifPresent(System.out::println);
     }
 
-    private static void getBookDeathAmountInLannister(List<Character> getCharacterFileAsStream) {
+    private static void getBookDeathAmountInStark(List<Character> getCharacterFileAsStream) {
         System.out.println("book die the most amount of characters from the Stark allegiance: ");
         getCharacterFileAsStream.stream()
                 .filter(e -> !e.getBookOfDeath().isEmpty())
@@ -104,12 +104,10 @@ public class CharacterSummarizer {
     }
 
     private static void getAllDeadCharacterInBook3(List<Character> getCharacterFileAsStream) {
-        List<String> getDeadCharactersFromBook3 = getCharacterFileAsStream.stream()
-                .collect(Collectors.groupingBy(Character::getName, Collectors.counting()))
-                .entrySet().stream()
-                .map(Map.Entry::getKey)
-                .collect(Collectors.toList());
-        System.out.println(getDeadCharactersFromBook3);
+        long book3DeadCount = getCharacterFileAsStream.stream()
+                .filter(e -> e.getBookOfDeath().equals("3"))
+                .count();
+        System.out.println("Book 3 deadcount: " + book3DeadCount);
     }
 
     private static void getBiggestDeathBook(List<Character> getCharacterFileAsStream) {
@@ -156,7 +154,7 @@ public class CharacterSummarizer {
         System.out.println("Number of dead characters: " + collect);
     }
 
-    private static void getAllCharNumberInBooks(List<Character> getCharacterFileAsStream) {
+    private static void displayAllCharactersNumberInBooks(List<Character> getCharacterFileAsStream) {
         long charactersCount = getCharacterFileAsStream.stream()
                 .map(Character::getBookOfDeath)
                 .count();

@@ -9,7 +9,7 @@ public class CharcatersReader {
     private FileReader reader = new FileReader();
 
 
-    public List<Character> getCharacter() {
+    public List<Character> getCharacters() {
         return reader.asStream("week10/ex4/got-characters.csv")
                 .skip(1)
                 .map(e -> e.split(";"))
