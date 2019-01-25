@@ -11,15 +11,17 @@ public class TxtReader {
 
     public List<String> asList(String filePath) {
         return reader.asStream(filePath)
-                .map(e -> e.toLowerCase())
+                .map(String::toLowerCase)
                 .map(e -> e.replaceAll(",", " "))
                 .map(e -> e.replaceAll(";", " "))
                 .map(e -> e.replaceAll("’s", " "))
+                .map(e -> e.replaceAll("’", " "))
                 .map(e -> e.replaceAll("’", " "))
                 .map(e -> e.replaceAll(":", " "))
                 .map(e -> e.replaceAll("#", " "))
                 .map(e -> e.replaceAll("/", " "))
                 .map(e -> e.replaceAll("-", " "))
+                .map(e -> e.replaceAll("\\.", " "))
                 .map(e -> e.replaceAll("\\*", " "))
                 .map(e -> e.replaceAll("\\(", " "))
                 .map(e -> e.replaceAll("\\)", " "))

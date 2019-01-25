@@ -3,19 +3,18 @@ package evaluation.week10;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
-import java.util.function.Consumer;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class AliceSummeraizer {
     public static void main(String[] args) {
-        List<String> getTxtFile = new TxtReader().asList("evaluation/week10/alice.txt");
-        getWordsCount(getTxtFile);
-        getFileDistnictWordsCount(getTxtFile);
-        getMost5AppearingWords(getTxtFile);
-        getLongestWord(getTxtFile);
-        getMost5AppearingLetters(getTxtFile);
-        getAliceAppearnce(getTxtFile);
+        List<String> words = new TxtReader().asList("evaluation/week10/alice.txt");
+        getWordsCount(words);
+        getFileDistnictWordsCount(words);
+        getMost5AppearingWords(words);
+        getLongestWord(words);
+        getMost5AppearingLetters(words);
+        getAliceAppearnce(words);
 
     }
 
@@ -40,15 +39,15 @@ public class AliceSummeraizer {
     }
 
     private static void getLongestWord(List<String> getTxtFile) {
-        Consumer<String> longestWords = System.out::println;
         getTxtFile.stream()
-                .collect(Collectors.groupingBy(e -> e, Collectors.toList()))
+                .collect(Collectors.groupingBy(e -> e.length(), Collectors.toList()))
                 .entrySet().stream()
-                .sorted(Comparator.comparing(Map.Entry::getKey))
-                .map(e -> e.getKey() + " | " + e.getValue())
-                .limit(1)
-                .forEach(longestWords);
-        System.out.println(longestWords);
+                .sorted(Comparator.comparing(Map.Entry<Integer, List<String>>::getKey).reversed())
+
+                .map(Map.Entry::getValue)
+                .findFirst()
+                .ifPresent(System.out::println);
+//        System.out.println(longestWords);
     }
 
     private static void getMost5AppearingWords(List<String> getTxtFile) {
