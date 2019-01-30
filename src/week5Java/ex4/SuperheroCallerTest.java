@@ -25,18 +25,18 @@ class SuperheroCallerTest {
         Assertions.assertTrue(heroes.contains(hero.getName()));
     }
 
-//    @Test
+//    @TicTakToe
 //    void testBatmanCall() {
 //        Batman batman = new Batman();
 //        Assertions.assertEquals("Batman",batman.getName());
 //
 //    }
-//    @Test
+//    @TicTakToe
 //    void testSupermanCall(){
 //        Superman superman = new Superman();
 //        Assertions.assertEquals("Superman",superman.getName());
 //    }
-//    @Test
+//    @TicTakToe
 //    void testSpidermanCall(){
 //        Spiderman spiderman = new Spiderman();
 //        Assertions.assertEquals("Spiderman",spiderman.getName());

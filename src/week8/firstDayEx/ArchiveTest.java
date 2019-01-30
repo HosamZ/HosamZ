@@ -11,12 +11,12 @@ import java.util.Set;
 class ArchiveTest {
 
         private Archive archive = new Archive();
-        private List<String> names = Arrays.asList("ahmad","ahmad","hosam","test");
+        private List<String> names = Arrays.asList("ahmad","ahmad","hosam","TicTakToe");
     @Test
     void testDisplayer() {
         HashSet<String> strings = new HashSet<>(names);
 
-        List<String> expected = Arrays.asList("test", "hosam","ahmad");
+        List<String> expected = Arrays.asList("TicTakToe", "hosam","ahmad");
         Set<String> actual = archive.getUnique(names);
 
         Assertions.assertEquals(expected,actual);

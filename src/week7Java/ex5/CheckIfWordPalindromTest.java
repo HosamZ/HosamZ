@@ -23,7 +23,7 @@ class CheckIfWordPalindromTest {
         Assertions.assertFalse(isWordPalindrom);
     }
 }
-//    @Test
+//    @TicTakToe
 //    void testIsThereIsWord() {
 //        Integer word = 111;
 //
