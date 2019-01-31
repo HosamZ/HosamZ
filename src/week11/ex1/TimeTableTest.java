@@ -49,10 +49,10 @@ class TimeTableTest {
         //Did he miss his flight?
         LocalTime nextFlightTime = LocalTime.parse("18:45:00");
 
-        Duration duration = Duration.between(timeToBeInAirport, nextFlightTime);
+        Duration timeBetweenNowAndNextFlight = Duration.between(timeToBeInAirport, nextFlightTime);
         Duration expected3 = Duration.parse("PT6H37M39S");
-        //        System.out.println(duration);
-        assertEquals(expected3, duration);
+        System.out.println("Time from now till next Flight: "+timeBetweenNowAndNextFlight);
+        assertEquals(expected3, timeBetweenNowAndNextFlight);
 
         LocalDateTime departureTimeFromLondon = LocalDateTime.of(date, nextFlightTime);
         LocalDateTime timeOfLandingInTokyo = departureTimeFromLondon.plusHours(11).plusMinutes(50);
@@ -70,7 +70,7 @@ class TimeTableTest {
         ZoneId tokyo = ZoneId.of("Asia/Tokyo");
         System.out.println("departureTimeFromLondon " + departureTimeFromLondon);
         ZonedDateTime arrivalTokyoTime = arrivalLondonTime.withZoneSameInstant(tokyo);
-        //        System.out.println("Time in London "+timeInLondon);
+        System.out.println("Time in London " + timeInLondon);
 
         ZonedDateTime expectedTimeInTokyo = ZonedDateTime.parse("2003-03-14T15:35+09:00[Asia/Tokyo]");
         assertEquals(expectedTimeInTokyo, arrivalTokyoTime);
@@ -93,7 +93,6 @@ class TimeTableTest {
         System.out.println(duration1);
         Duration expectedFinishingTime = Duration.parse("PT-9M-6S");
         assertEquals(expectedFinishingTime, duration1);
-//        System.out.println(advertisementTime.getMinute()-minute+" minutes");
         System.out.println(timeNeededToBeReady.getSecond() - advertisementTime.getSecond() + " seconds");
 
         LocalDateTime afterShootingTime = advertisementTime.plusHours(7);
@@ -101,12 +100,11 @@ class TimeTableTest {
         LocalDateTime launchTime = LocalDateTime.parse("2003-03-15T13:00");
         LocalDateTime dinnerTime = LocalDateTime.parse("2003-03-15T20:00");
 
-//        long untilLaunch = afterShootingTime.until(launchTime, ChronoUnit.MINUTES);
         long untilLunch = ChronoUnit.MINUTES.between(afterShootingTime, launchTime);
-//        System.out.println(untilLunch+" minutes.");
+        System.out.println("Time untill Launch: " + untilLunch + " minutes.");
         long expectedLunchTime = 158L;
         long untilDinner = ChronoUnit.MINUTES.between(afterShootingTime, dinnerTime);
-//        System.out.println(untildinner+" minutes.");
+        System.out.println("Time untill Dinner: " + untilDinner + " minutes.");
         long expectedDinnerTime = 578L;
 
         assertEquals(expectedLunchTime, untilLunch);
@@ -141,7 +139,7 @@ class TimeTableTest {
         LocalDateTime saunaEndTime = LocalDateTime.parse("2003-03-19T14:00:00");
         Duration timeHeCanBeInSauna = Duration.between(arrivedInHotel, saunaEndTime);
         boolean canHeStay30MinutesInSauna = !timeHeCanBeInSauna.minusMinutes(30).isNegative();
-//        System.out.println(timeHeCanBeInSauna.toMinutes()+" minutes");
+        System.out.println(timeHeCanBeInSauna.toMinutes() + " minutes");
         System.out.println("can he be 30 minutes inside sauna ? " + canHeStay30MinutesInSauna);
 
         assertTrue(canHeStay30MinutesInSauna);
@@ -150,7 +148,7 @@ class TimeTableTest {
         LocalDateTime timeAfterFinisingSauna = arrivedInHotel.plusMinutes(30);
         LocalDate timeAfterSauna = timeAfterFinisingSauna.toLocalDate();
         boolean isLeapYear = timeAfterSauna.isLeapYear();
-//        System.out.println("is it leap year ? "+isLeapYear);
+        System.out.println("is it leap year ? " + isLeapYear);
         boolean canHaveSpecialMassage = canHaveSpecialMassage(timeAfterSauna);
         assertFalse(canHaveSpecialMassage);
 
@@ -173,7 +171,7 @@ class TimeTableTest {
         ZonedDateTime timeAndDateOfManagerCall = londonBroadcastTime.plusSeconds(END_OF_ADVERTISEMENT)
                 .plusSeconds(FIFTEEN_SECONDS_LATER);
         LocalTime timeOfManagerCall = timeAndDateOfManagerCall.toLocalTime();
-//        System.out.println("manager called him at: "+timeOfManagerCall);
+        System.out.println("manager called him at: " + timeOfManagerCall);
         DayOfWeek dayOfWeekManagerCalled = timeAndDateOfManagerCall.getDayOfWeek();
         System.out.println("manager called him at this Day: " + dayOfWeekManagerCalled);
         LocalTime expectedTimeOfManagerCall = LocalTime.parse("09:30:44");
