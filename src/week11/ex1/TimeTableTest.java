@@ -1,4 +1,4 @@
-package week11;
+package week11.ex1;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
