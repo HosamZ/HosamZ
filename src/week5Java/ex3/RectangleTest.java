@@ -6,7 +6,7 @@ class RectangleTest {
     @Test
     void testRectangleName(){
         Rectangle rectangle = new Rectangle();
-        Assertions.assertEquals("triangle",rectangle.getName());
+        Assertions.assertEquals("rectangle",rectangle.getName());
     }   @Test
     void testRectangleColor(){
         Rectangle rectangle = new Rectangle();
@@ -14,7 +14,7 @@ class RectangleTest {
     }   @Test
     void testRectangleShape(){
         Shape rectangle = new Rectangle();
-        Assertions.assertEquals("triangle",rectangle.getName());
+        Assertions.assertEquals("rectangle",rectangle.getName());
     }
     @Test
     void testRectangleColored(){

@@ -17,7 +17,7 @@ class ArchiveTest {
         HashSet<String> strings = new HashSet<>(names);
 
         List<String> expected = Arrays.asList("TicTakToe", "hosam","ahmad");
-        Set<String> actual = archive.getUnique(names);
+        List<String> actual = archive.getUnique(names);
 
         Assertions.assertEquals(expected,actual);
     }

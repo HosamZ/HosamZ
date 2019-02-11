@@ -23,7 +23,7 @@ class SmsSummarizerTest {
     @Test
     void testMostUseHamWord() {
         String actual = getMostUsedWordInHam();
-        String expected = "to";
+        String expected =  "Most used ham word: to";
 
         Assertions.assertEquals(expected, actual);
 
@@ -80,7 +80,7 @@ class SmsSummarizerTest {
                 .entrySet().stream()
                 .sorted((e1, e2) -> e2.getValue().compareTo(e1.getValue()))
                 .limit(1)
-                .map(e -> " Most used ham word: " + e.getKey())
+                .map(e -> "Most used ham word: " + e.getKey())
                 .collect(Collectors.joining());
     }
 
