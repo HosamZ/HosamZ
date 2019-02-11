@@ -14,6 +14,6 @@ class NumberSplitterTest {
         String pop = split.pop();
         System.out.println(split);
         System.out.println("pop:" + pop);
-        Assertions.assertEquals(3,Integer.valueOf(pop));
+        Assertions.assertEquals(3,Integer.valueOf(pop).intValue());
     }
 }
