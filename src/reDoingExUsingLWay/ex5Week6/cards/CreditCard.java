@@ -1,4 +1,6 @@
-package reDoingExUsingLWay.ex5Week6;
+package reDoingExUsingLWay.ex5Week6.cards;
+
+import reDoingExUsingLWay.ex5Week6.Validator;
 
 import java.util.List;
 

@@ -19,17 +19,17 @@ public class NumberPermutions {
         if (numberOfDigits == 1) {
             String resultsInStrings = Arrays.toString(digits);
             results.add(resultsInStrings);
-            System.out.println("===== added result: " + resultsInStrings);
+//            System.out.println("===== added result: " + resultsInStrings);
         } else {
             for (int index = 0; index < numberOfDigits; index++) {
                 heapsAlgorithm(digits, numberOfDigits - 1);
 
-                System.out.println("current: " + Arrays.asList(digits));
+//                System.out.println("current: " + Arrays.asList(digits));
                 int current = (numberOfDigits % 2 == 0) ? index : 0;
                 int temporary = digits[numberOfDigits - 1];
                 digits[numberOfDigits - 1] = digits[current];
                 digits[current] = temporary;
-                System.out.println("altered: " + Arrays.asList(digits));
+//                System.out.println("altered: " + Arrays.asList(digits));
             }
         }
         return results;

@@ -8,7 +8,6 @@ import java.util.Queue;
 import static java.util.stream.Collectors.toList;
 
 public class CoordinateGetter {
-//    private List<DirectionStrategy> strategies = new ArrayList<>();
         private List<DirectionStrategy> strategies = Strategies.asList();
 
 

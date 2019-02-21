@@ -1,4 +1,7 @@
-package reDoingExUsingLWay.ex5Week6;
+package reDoingExUsingLWay.ex5Week6.cards;
+
+import reDoingExUsingLWay.ex5Week6.LengthValidator;
+import reDoingExUsingLWay.ex5Week6.StartsWithValidator;
 
 import java.util.Arrays;
 
