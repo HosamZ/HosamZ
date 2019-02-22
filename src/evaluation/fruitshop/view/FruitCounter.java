@@ -12,7 +12,7 @@ import java.util.List;
 public class FruitCounter {
     public void display() {
         System.out.println("\nThese are all our tasteful fruits: ");
-        List<Fruit> fruits = Assistant.transferToList();
+        List<Fruit> fruits = Assistant.toFruit();
         displayInLines(fruits);
         log.info(fruits.toString());
     }

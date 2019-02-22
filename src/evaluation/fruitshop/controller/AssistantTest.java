@@ -13,7 +13,7 @@ class AssistantTest {
 
     @Test
     void transferToList() {
-        List<Fruit> fruits = Assistant.transferToList();
+        List<Fruit> fruits = Assistant.toFruit();
         log.info(fruits.toString());
 
     }
@@ -21,10 +21,10 @@ class AssistantTest {
     @ParameterizedTest
     @CsvSource({
             ",",
-            "1 Apple \n1Orange, Apple Orange",
-            "2 Apple \n1Orange, Apple Apple Orange",
+            "1 Apple \n1 Orange, Apple Orange",
+            "2 Apple \n1 Orange, Apple Apple Orange",
     })
     void testWithCsvSource(String expected, String input) {
-
+//        Assistant.toFruit();
     }
 }

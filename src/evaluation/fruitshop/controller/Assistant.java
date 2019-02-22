@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 @UtilityClass
 public class Assistant {
 
-    public List<Fruit> transferToList() {
+    public List<Fruit> toFruit() {
         return FruitReader.listOfFruits()
                 .collect(Collectors.groupingBy(e -> e, Collectors.counting()))
                 .entrySet().stream()
