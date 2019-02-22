@@ -2,7 +2,6 @@ package evaluation.fruitshop.controller;
 
 import evaluation.fruitshop.model.Fruit;
 import lombok.experimental.UtilityClass;
-import lombok.extern.java.Log;
 
 import java.util.List;
 import java.util.Map;
@@ -10,7 +9,6 @@ import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 @UtilityClass
-@Log
 public class Assistant {
     public String countFruit(List<Fruit> fruitsNames) {
         List<Fruit> fruits = FruitReader.asList
