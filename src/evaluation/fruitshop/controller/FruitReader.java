@@ -1,17 +1,12 @@
 package evaluation.fruitshop.controller;
 
-import evaluation.fruitshop.model.Fruit;
 import lombok.experimental.UtilityClass;
 
-import java.util.List;
-import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 @UtilityClass
 public class FruitReader {
-
-    public List<Fruit> asList(String filePath) {
-        return FileReaderUsingLombok.lines(filePath)
-                .map(e -> Fruit.builder().name(e).build())
-                .collect(Collectors.toList());
+    public Stream<String> listOfFruits() {
+        return FileReaderUsingLombok.lines("evaluation/fruitshop/resources/delivery.txt");
     }
 }

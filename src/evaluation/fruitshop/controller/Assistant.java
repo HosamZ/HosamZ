@@ -4,26 +4,16 @@ import evaluation.fruitshop.model.Fruit;
 import lombok.experimental.UtilityClass;
 
 import java.util.List;
-import java.util.Map;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 @UtilityClass
 public class Assistant {
-    public String countFruit(List<Fruit> fruitsNames) {
-        List<Fruit> fruits = FruitReader.asList
-                ("evaluation/fruitshop/resources/delivery.txt");
-        if (fruitsNames.size() < 1) {
-            return "";
-        }
-        return fruits.stream()
-                .collect(groupByName())
-                .entrySet().stream()
-                .map(e -> e.getValue() + " " + e.getKey())
-                .collect(Collectors.joining("\n"));
-    }
 
-    private static Collector<Fruit, ?, Map<String, Long>> groupByName() {
-        return Collectors.groupingBy(Fruit::getName, Collectors.counting());
+    public List<Fruit> transferToList() {
+        return FruitReader.listOfFruits()
+                .collect(Collectors.groupingBy(e -> e, Collectors.counting()))
+                .entrySet().stream()
+                .map(e -> Fruit.builder().name(e.getKey()).amount(e.getValue()).build())
+                .collect(Collectors.toList());
     }
 }

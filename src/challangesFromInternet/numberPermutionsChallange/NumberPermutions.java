@@ -24,12 +24,12 @@ public class NumberPermutions {
             for (int index = 0; index < numberOfDigits; index++) {
                 heapsAlgorithm(digits, numberOfDigits - 1);
 
-//                System.out.println("current: " + Arrays.asList(digits));
+//                System.out.println("current: " + Arrays.listOfFruits(digits));
                 int current = (numberOfDigits % 2 == 0) ? index : 0;
                 int temporary = digits[numberOfDigits - 1];
                 digits[numberOfDigits - 1] = digits[current];
                 digits[current] = temporary;
-//                System.out.println("altered: " + Arrays.asList(digits));
+//                System.out.println("altered: " + Arrays.listOfFruits(digits));
             }
         }
         return results;

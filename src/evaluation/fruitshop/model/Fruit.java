@@ -7,5 +7,5 @@ import lombok.Value;
 @Builder
 public class Fruit {
     private String name;
-    private int amount;
+    private Long amount;
 }
