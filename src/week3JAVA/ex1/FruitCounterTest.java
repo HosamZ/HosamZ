@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 
-class ScreenTest {
+class FruitCounterTest {
     Screen screen = new Screen();
     @Test
     void testBusinessCustomer() {

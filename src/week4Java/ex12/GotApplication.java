@@ -8,7 +8,7 @@ public class GotApplication {
         showNumberOfCharacters();
         System.out.println("Number of dead characters: "+characterDeath());
         showNumberOfMenDeaths();
-        //make more clasess to store your methods every class has one responsibility
+        //countFruit more clasess to store your methods every class has one responsibility
         deadWomenPercentage();
         Integer deadmen = showNumberOfMenDeaths();
         System.out.println("Dead men: "+deadmen+" | "+"Dead men: "+deadMenPercentage()+"%");
